@@ -1,9 +1,11 @@
 package viewqueue;
 
+import java.util.Observable;
+
 /**
  *Represents an Attraction at an amusement park such as a ride, game, or show
  */
-public class Attraction {
+public class Attraction  extends Observable{
 
     private String name;      // name of Attraction
     private String type;      // type of Attraction
@@ -17,6 +19,8 @@ public class Attraction {
     private void CalculateWait(){
 
         this.wait = this.s.getNumPpl() / this.rate;
+        setChanged();
+        notifyObservers();
 
     }
 
