@@ -13,6 +13,12 @@ public class Attraction {
     private double wait;
 
     private Sensor s = new Sensor(this.name, 0); // The sensor for this attraction
+    // calculates and sets the wait time based on Sensor changes
+    private void CalculateWait(){
+
+        this.wait = this.s.getNumPpl() / this.rate;
+
+    }
 
     /**
      * Builds a new Attraction
@@ -28,13 +34,6 @@ public class Attraction {
         this.numOps = numOps;
         this.capacity = capacity;
         this.rate = rate;
-    }
-
-
-    private void CalculateWait(){
-
-        this.wait = this.s.getNumPpl() / this.rate;
-
     }
 
     /**
