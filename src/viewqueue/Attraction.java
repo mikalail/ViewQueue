@@ -112,4 +112,13 @@ public class Attraction  extends Observable{
     public void setRate(double rate) {
         this.rate = rate;
     }
+
+    /**
+     * sets this sensor data (for simulated sensors only)
+     * @param ppl an integer that represents the number of people detected by the sensor
+     */
+    public void click(int ppl){
+        this.s.setNumPpl(ppl);
+
+    }
 }
