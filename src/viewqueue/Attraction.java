@@ -15,8 +15,9 @@ public class Attraction  extends Observable{
     private double wait;
 
     private Sensor s = new Sensor(this.name, 0); // The sensor for this attraction
+
     // calculates and sets the wait time based on Sensor changes
-    private void CalculateWait(){
+    public void CalculateWait(){
 
         this.wait = this.s.getNumPpl() / this.rate;
         setChanged();
