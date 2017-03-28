@@ -5,10 +5,10 @@ package viewqueue;
  */
 public class Attraction {
 
-    private String name; // name of Attraction
-    private String type; // type of Attraction
-    private int numOps;    //the number of operators
-    private int capacity;    // the number of people the Attraction can serve at each "turn"
+    private String name;      // name of Attraction
+    private String type;      // type of Attraction
+    private int numOps;       // the number of operators
+    private int capacity;     // the number of people the Attraction can serve on each "turn"
     private double rate;      // the number of people per unit of time served by the Attraction
     private double wait;
 
