@@ -42,6 +42,16 @@ public class Attraction  extends Observable{
     }
 
     /**
+     * The string representation of Attraction, containing only the 'name' and 'wait' fields
+     * @return a string containing the name and wait time.
+     */
+    public String toString(){
+
+        return(this.name + " " + this.wait);
+
+    }
+
+    /**
      * The name of this Attraction
      * @return attraction name
      */
