@@ -12,3 +12,6 @@
 .idea/vcs.xml
 
 *.iml
+.idea/kotlinc.xml
+
+*.class
