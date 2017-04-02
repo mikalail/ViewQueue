@@ -26,7 +26,6 @@ public class AttractionManager {
 
         return list.add(a);
 
-
     }
 
     /**
@@ -37,7 +36,6 @@ public class AttractionManager {
     public boolean rem(Attraction a){
 
         return list.remove(a);
-
 
    }
 
