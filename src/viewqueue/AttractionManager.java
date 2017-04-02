@@ -8,11 +8,13 @@ import java.util.ArrayList;
 public class AttractionManager {
 
     private ArrayList<Attraction> list;
+    private int numAttractions;
 
 
     public AttractionManager() {
 
         this.list = new ArrayList<>();
+        this.numAttractions = 0;
 
     }
 
@@ -24,7 +26,10 @@ public class AttractionManager {
 
     public boolean add(Attraction a){
 
-        return( list.add(a) );
+        if( list.add(a) ){
+            this.numAttractions += 1;
+            return true;
+        }else return false;
 
     }
 
@@ -35,7 +40,10 @@ public class AttractionManager {
      */
     public boolean rem(Attraction a){
 
-       return( list.remove(a) );
+       if( list.remove(a) ){
+           this.numAttractions -= 1;
+           return true;
+       }else return false;
 
    }
 
