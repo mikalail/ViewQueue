@@ -7,28 +7,35 @@ import java.util.ArrayList;
  */
 public class AttractionManager {
 
-    private ArrayList<Attraction> list = new ArrayList<>();
+    private ArrayList<Attraction> list;
 
 
-    /**
-     * adds an Attraction object to the list
-     * @param a - an Attraction object
-     */
+    public AttractionManager() {
 
-    public void add(Attraction a){
-
-        list.add(a);
+        this.list = new ArrayList<>();
 
     }
 
     /**
-     * removes an item from the list
+     * adds an Attraction object to the end of the list
+     * @param a - an Attraction object
+     * @return boolean value: true on success, otherwise false
+     */
+
+    public boolean add(Attraction a){
+
+        return( list.add(a) );
+
+    }
+
+    /**
+     * removes first occurrence of object in list - if present
      * @param a - an Attraction object
      * @return a boolean result based on success(true) or failure(false)
      */
     public boolean rem(Attraction a){
 
-       return(list.remove(a));
+       return( list.remove(a) );
 
    }
 
