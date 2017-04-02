@@ -14,10 +14,10 @@ public class Attraction  extends Observable{
     private double rate;      // the number of people per unit of time served by the Attraction
     private double wait;
 
-    private Sensor s = new Sensor(this.name, 0); // The sensor for this attraction
+    private Sensor s;        // The sensor for this attraction
 
     // calculates and sets the wait time based on Sensor changes
-    public void CalculateWait(){
+    private void CalculateWait(){
 
         this.wait = this.s.getNumPpl() / this.rate;
         setChanged();
@@ -39,6 +39,7 @@ public class Attraction  extends Observable{
         this.numOps = numOps;
         this.capacity = capacity;
         this.rate = rate;
+        this.s = new Sensor(this.name, 0);
     }
 
     /**
@@ -55,9 +56,7 @@ public class Attraction  extends Observable{
      * The name of this Attraction
      * @return attraction name
      */
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     /**
      * The type of this Attraction
@@ -129,6 +128,7 @@ public class Attraction  extends Observable{
      */
     public void click(int ppl){
         this.s.setNumPpl(ppl);
+        this.CalculateWait();
 
     }
 }

@@ -5,7 +5,7 @@ import java.util.Observable;
 /**
  * The Sensor class represents a sensor near an attraction at the park to count how many people are waiting in line
  */
-public class Sensor extends Observable{
+public class Sensor{
 
     private String aName;
     private int numPpl;
@@ -34,8 +34,6 @@ public class Sensor extends Observable{
      */
     public void setNumPpl(int numPpl) {
         this.numPpl = numPpl;
-        setChanged();
-        notifyObservers();
     }
 
     /**
