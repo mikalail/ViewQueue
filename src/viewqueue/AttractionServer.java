@@ -45,7 +45,7 @@ public class AttractionServer {
 
         if( line.trim().toLowerCase().equals("get")){
             System.out.println("Processing 'get'");
-            out.println("FILL IN LATER");
+            //DO A THING THAT RETURNS THE LIST AS A STRING
 
         }
         else{

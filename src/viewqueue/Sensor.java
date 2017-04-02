@@ -1,7 +1,5 @@
 package viewqueue;
 
-import java.util.Observable;
-
 /**
  * The Sensor class represents a sensor near an attraction at the park to count how many people are waiting in line
  */
