@@ -56,14 +56,15 @@ public class AttractionManager {
      * displays each Attraction in list with Name + wait time only.
      */
 
-   public void waitList(){
+   public String toString(){
+
+       String waitlist = "WAIT$$ ";
 
         for(Attraction at : list){
 
-            // this should ultimately create a String listing of each to go through the network stream
-            // for now, just printing out with a system message
-            System.out.println(at.toString());
+            waitlist += at.toString();
         }
+        return waitlist;
    }
 
     /**

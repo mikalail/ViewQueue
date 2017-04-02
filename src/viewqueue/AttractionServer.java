@@ -13,9 +13,7 @@ import java.net.Socket;
  */
 public class AttractionServer {
 
-
    //eventual list attribute will go here
-
 
     private void processClient(BufferedReader in, PrintWriter out){
 
