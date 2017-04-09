@@ -31,7 +31,7 @@ public class Attraction  extends Observable{
      * @param type The type of attraction. i.e. (ride: rollercoaster, ride: spinning cups, etc.)
      * @param numOps The number of operators running the Attraction
      * @param capacity The capacity of each "run" or "turn" of the Attraction
-     * @param rate The rate at which the attraction moves people through per unit of time
+     * @param rate The rate at which the attraction moves people through per unit of time in minutes
      */
     public Attraction(String name, String type, int numOps, int capacity, double rate) {
         this.name = name;
