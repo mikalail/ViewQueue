@@ -131,4 +131,9 @@ public class Attraction  extends Observable{
         this.CalculateWait();
 
     }
+
+    public int sensorPeek(){
+
+        return this.s.getNumPpl();
+    }
 }
