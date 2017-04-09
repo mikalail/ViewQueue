@@ -66,7 +66,7 @@ public class AttractionServer {
 
                 System.out.println("Waiting for a client . . . .");
                 clientSock = serverSock.accept();
-                System.out.println("Client conntion from " + clientSock.getInetAddress().getHostAddress());
+                System.out.println("Client connection from " + clientSock.getInetAddress().getHostAddress());
                 in = new BufferedReader(new InputStreamReader(clientSock.getInputStream()));
                 out = new PrintWriter(clientSock.getOutputStream(), true);
 
