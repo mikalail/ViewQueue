@@ -3,9 +3,7 @@ package viewqueue;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Created by jasonsimmons on 4/9/17.
- */
+
 public class AttractionTest {
 
     Attraction at = new Attraction("DeathCoaster3000", "rollercoaster", 4, 80, 5.33);
@@ -41,8 +39,9 @@ public class AttractionTest {
         assertEquals(5.33, at.getRate(), .01);
     }
 
-    @Test // because click invokes other methods, this test combines click, sensorPeek, and getWait()
-          // to check full functionality of the click method
+    @Test // because click invokes other methods, this test combines click, sensorPeek,  getWait()
+          // and calculateWait() to check full functionality of the click method
+
     public void click() throws Exception {
 
         at.click(300);
@@ -72,7 +71,5 @@ public class AttractionTest {
         at.setRate(9.32);
         assertEquals(9.32, at.getRate(), .01);
     }
-
-
 
 }

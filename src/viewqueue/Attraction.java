@@ -132,6 +132,10 @@ public class Attraction  extends Observable{
 
     }
 
+    /**
+     * shows the number of people currently detected by the sensor
+     * @return an integer representing the number of people detected by the sensor
+     */
     public int sensorPeek(){
 
         return this.s.getNumPpl();
