@@ -9,7 +9,9 @@ public class AttractionManager {
 
     private ArrayList<Attraction> list;
 
-
+    /**
+     * Constructs a new AttractionManager
+     */
     public AttractionManager() {
 
         this.list = new ArrayList<>();
@@ -21,7 +23,6 @@ public class AttractionManager {
      * @param a - an Attraction object
      * @return boolean value: true on success, otherwise false
      */
-
     public boolean add(Attraction a){
 
         return list.add(a);
@@ -55,7 +56,6 @@ public class AttractionManager {
     /**
      * displays each Attraction in list with Name + wait time only.
      */
-
    public String toString(){
 
        String waitlist = "WAIT$$ ";
@@ -71,7 +71,6 @@ public class AttractionManager {
      * The number of Attractions being managed my AttractionManager
      * @return the number of Attractions active in AttractionManager
      */
-
     public int getNumAttractions() {
         return list.size();
     }

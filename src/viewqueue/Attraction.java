@@ -1,45 +1,35 @@
 package viewqueue;
 
-import java.util.Observable;
+import java.io.Serializable;
 
 /**
  *Represents an Attraction at an amusement park such as a ride, game, or show
  */
-public class Attraction  extends Observable{
+public class Attraction  implements Serializable{
 
     private String name;      // name of Attraction
-    private String type;      // type of Attraction
-    private int numOps;       // the number of operators
-    private int capacity;     // the number of people the Attraction can serve on each "turn"
-    private double rate;      // the number of people per unit of time served by the Attraction
     private double wait;
+    private int sensorData;
+    double rate;
 
-    private Sensor s;        // The sensor for this attraction
-
-    // calculates and sets the wait time based on Sensor changes
-    private void CalculateWait(){
-
-        this.wait = this.s.getNumPpl() / this.rate;
-        setChanged();
-        notifyObservers();
-
-    }
 
     /**
      * Builds a new Attraction
      * @param name The name of this attraction
-     * @param type The type of attraction. i.e. (ride: rollercoaster, ride: spinning cups, etc.)
-     * @param numOps The number of operators running the Attraction
-     * @param capacity The capacity of each "run" or "turn" of the Attraction
-     * @param rate The rate at which the attraction moves people through per unit of time in minutes
+     * @param rate the rate (in people/min) that the Attraction
      */
-    public Attraction(String name, String type, int numOps, int capacity, double rate) {
+    public Attraction(String name, double rate) {
         this.name = name;
-        this.type = type;
-        this.numOps = numOps;
-        this.capacity = capacity;
         this.rate = rate;
-        this.s = new Sensor(this.name, 0);
+        this.wait = 0.0;
+        this.sensorData = 0;
+
+    }
+
+
+    private void setWait( ){
+
+        this.wait = this.sensorData/this.rate;
     }
 
     /**
@@ -48,7 +38,7 @@ public class Attraction  extends Observable{
      */
     public String toString(){
 
-        return(this.name + " " + this.wait);
+        return(name + " & " + wait);
 
     }
 
@@ -59,85 +49,21 @@ public class Attraction  extends Observable{
     public String getName() { return name; }
 
     /**
-     * The type of this Attraction
-     * @return attraction type
-     */
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * The number of operators on this Attraction
-     * @return number of attraction operators
-     */
-    public int getNumOps() {
-        return numOps;
-    }
-
-    /**
-     * The capacity for each seating of this Attraction
-     * @return attraction capacity for each seating
-     */
-    public int getCapacity() {
-        return capacity;
-    }
-
-    /**
-     * The rate (people/min) that the Attraction serves customers.
-     * @return the rate of the Attraction in people per minute
-     */
-    public double getRate() {
-        return rate;
-    }
-
-    /**
-     * The wait time for this attraction based on the last sensor reading
-     * @return The waiting time in minutes
+     * The wait time of this Attraction
+     * @return the wait time (in minutes)
      */
     public double getWait() {
         return wait;
     }
 
     /**
-     * Sets the number of operators for this Attraction
-     * @param numOps an integer representing the number of operators
+     * Updates the sensor count of people waiting in line
+     * @param ppl
      */
-    public void setNumOps(int numOps) {
-        this.numOps = numOps;
-    }
-
-    /**
-     * sets the capacity for this attraction
-     * @param capacity an integer representing the capacity served by each run/turn of the attraction
-     */
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    /**
-     * sets the rate for this attraction
-     * @param rate a double value representing the rate in people per minute.
-     */
-    public void setRate(double rate) {
-        this.rate = rate;
-    }
-
-    /**
-     * sets this sensor data (for simulated sensors only)
-     * @param ppl an integer that represents the number of people detected by the sensor
-     */
-    public void click(int ppl){
-        this.s.setNumPpl(ppl);
-        this.CalculateWait();
+    public  void sensorUpdate(int ppl){
+        this.sensorData = ppl;
+        setWait();
 
     }
 
-    /**
-     * shows the number of people currently detected by the sensor
-     * @return an integer representing the number of people detected by the sensor
-     */
-    public int sensorPeek(){
-
-        return this.s.getNumPpl();
-    }
 }

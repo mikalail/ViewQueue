@@ -9,11 +9,12 @@ import java.net.Socket;
 
 /**
  * The AttractionServer manages communication with the ViewQueue client (Android) using the TCP protocol.
- * note: this implementation is *not* a threaded server, only a simple one.
+ * note: this implementation is *not* a threaded server, only a simple one.  Exit AttractionServer by pressing Ctrl-C
  */
 public class AttractionServer {
 
    //eventual list attribute will go here
+    AttractionManager am;
 
     private void processClient(BufferedReader in, PrintWriter out){
 
@@ -42,22 +43,27 @@ public class AttractionServer {
     private void doRequest(String line, PrintWriter out){
 
         if( line.trim().toLowerCase().equals("get")){
-            System.out.println("Processing 'get'");
-            //DO A THING THAT RETURNS THE LIST AS A STRING
 
+            System.out.println("Processing 'get'");
+            out.println( am.toString() );
         }
         else{
             System.out.println("Ignoring input line");
         }
 
-
     }
 
-    public AttractionServer() {
+    /**
+     * Constructs a new AttractionServer
+     * @param rides an AttractionManager object
+     */
+    public AttractionServer(AttractionManager rides) {
+
+        this.am = rides;
 
         try {
 
-            ServerSocket serverSock = new ServerSocket(1234); // need to study which port before use
+            ServerSocket serverSock = new ServerSocket(9999); // need to study which port before use
             Socket clientSock;
             BufferedReader in;
             PrintWriter out;
