@@ -38,7 +38,7 @@ public class Attraction  implements Serializable{
      */
     public String toString(){
 
-        return(name + " & " + wait);
+        return(name + ":" + wait + ":");
 
     }
 

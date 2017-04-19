@@ -58,7 +58,7 @@ public class AttractionManager {
      */
    public String toString(){
 
-       String waitlist = "WAIT$$ ";
+       String waitlist = "";
 
         for(Attraction at : list){
 
