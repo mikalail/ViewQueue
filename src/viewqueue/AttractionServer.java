@@ -63,7 +63,7 @@ public class AttractionServer {
 
         try {
 
-            ServerSocket serverSock = new ServerSocket(9999); // need to study which port before use
+            ServerSocket serverSock = new ServerSocket(9999);
             Socket clientSock;
             BufferedReader in;
             PrintWriter out;
