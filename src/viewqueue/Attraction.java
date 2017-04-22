@@ -56,6 +56,15 @@ public class Attraction  implements Serializable{
         return wait;
     }
 
+
+    /**
+     * The amount of people in line detected by the sensor
+     * @return an integer representing the amount of people in line
+     */
+    public int getSensorData() {
+        return sensorData;
+    }
+
     /**
      * Updates the sensor count of people waiting in line
      * @param ppl

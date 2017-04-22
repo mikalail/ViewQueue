@@ -62,7 +62,9 @@ public class AttractionManager {
 
         for(Attraction at : list){
 
-            waitlist += at.toString();
+            int read = at.getSensorData() + 50; // simulates the sensor changing by adding 50 ppl.
+            at.sensorUpdate(read); // updates the sensordata (and wait time) for the current attraction
+            waitlist += at.toString();  // concatenates the current attraction into the waitlist string.
         }
         return waitlist;
    }
