@@ -1,35 +1,42 @@
-package viewqueue;
+//package viewqueue
 
 import java.io.Serializable;
-
+import java.util.Random;
 /**
  *Represents an Attraction at an amusement park such as a ride, game, or show
  */
 public class Attraction  implements Serializable{
 
     private String name;      // name of Attraction
-    private double wait;
-    private int sensorData;
-    double rate;
-
+    private int wait;
 
     /**
      * Builds a new Attraction
      * @param name The name of this attraction
      * @param rate the rate (in people/min) that the Attraction
      */
-    public Attraction(String name, double rate) {
+    public Attraction(String name, int wait) {
         this.name = name;
-        this.rate = rate;
-        this.wait = 0.0;
-        this.sensorData = 0;
+        this.wait = wait;//
 
     }
 
+    private static int rand(int min, int max){
+    Random rand = new Random();
+    int randomNum = rand.nextInt((max - min) + 1) + min;
+    return randomNum;
+    }
 
-    private void setWait( ){
+    private int getWaitTime(){
+        return wait;
+    } 
 
-        this.wait = this.sensorData/this.rate;
+    public void updateWait( ){
+       int temp = rand(0, 10);
+       int result = temp - 5;
+       // this.wait = this.sensorData/this.rate;
+       result = (result % 15) + 15;//keep number positive
+       this.wait = result;
     }
 
     /**
@@ -55,24 +62,4 @@ public class Attraction  implements Serializable{
     public double getWait() {
         return wait;
     }
-
-
-    /**
-     * The amount of people in line detected by the sensor
-     * @return an integer representing the amount of people in line
-     */
-    public int getSensorData() {
-        return sensorData;
-    }
-
-    /**
-     * Updates the sensor count of people waiting in line
-     * @param ppl
-     */
-    public  void sensorUpdate(int ppl){
-        this.sensorData = ppl;
-        setWait();
-
-    }
-
 }
