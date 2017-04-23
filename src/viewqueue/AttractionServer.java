@@ -1,4 +1,4 @@
-package viewqueue;
+// package viewqueue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,9 +22,10 @@ public class AttractionServer {
       String line;
       boolean done = false;
       try{
-          while(!done){
-              if( (line = in.readLine() ) == null)
+          while(done == false){
+              if( (line = in.readLine() ) == null){
                   done = true;
+                  }
               else{
                   System.out.println("Client msg: " + line);
                   if(line.trim().equals("bye")){
