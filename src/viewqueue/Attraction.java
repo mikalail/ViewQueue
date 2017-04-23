@@ -1,4 +1,6 @@
-//package viewqueue
+//package viewqueue;
+//I commented out the package cause I was all the java files in my ubuntu machine. "javac *.java" to compile all and 
+//"java Main" to run the server works
 
 import java.io.Serializable;
 import java.util.Random;
