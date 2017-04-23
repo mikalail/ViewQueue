@@ -1,4 +1,4 @@
-package viewqueue;
+//package viewqueue;
 
 import java.util.ArrayList;
 
@@ -8,14 +8,27 @@ import java.util.ArrayList;
 public class AttractionManager {
 
     private ArrayList<Attraction> list;
-
+    
     /**
      * Constructs a new AttractionManager
      */
     public AttractionManager() {
 
         this.list = new ArrayList<>();
-
+        Attraction att1 = new Attraction("Apocalypse", 4);
+        Attraction att2 = new Attraction("Batwing", 6);
+        Attraction att3 = new Attraction("Dare Devil", 9);
+        Attraction att4 = new Attraction("Mind Eraser", 7);
+        Attraction att5 = new Attraction("Superman", 3);
+        Attraction att6 = new Attraction("Live Music", 2);
+        Attraction att7 = new Attraction("Theater", 3);
+        list.add(att1);
+        list.add(att2);
+        list.add(att3);
+        list.add(att4);
+        list.add(att5);
+        list.add(att6);
+        list.add(att7);
     }
 
     /**
@@ -60,11 +73,15 @@ public class AttractionManager {
 
        String waitlist = "";
 
+     //   for(Attraction x : r){
+   //        waitlist += x.getName() + ":" + x.getWaitTime() + ":";
+          // }
         for(Attraction at : list){
 
-            int read = at.getSensorData() + 50; // simulates the sensor changing by adding 50 ppl.
-            at.sensorUpdate(read); // updates the sensordata (and wait time) for the current attraction
+          //  int read = at.getSensorData() + 50; // simulates the sensor changing by adding 50 ppl.
+            //at.sensorUpdate(read); // updates the sensordata (and wait time) for the current attraction
             waitlist += at.toString();  // concatenates the current attraction into the waitlist string.
+            at.updateWait();
         }
         return waitlist;
    }
