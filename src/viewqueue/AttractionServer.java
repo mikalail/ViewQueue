@@ -1,4 +1,4 @@
-// package viewqueue;
+package viewqueue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +10,7 @@ import java.net.Socket;
 /**
  * The AttractionServer manages communication with the ViewQueue client (Android) using the TCP protocol.
  * note: this implementation is *not* a threaded server, only a simple one.  Exit AttractionServer by pressing Ctrl-C
+ * This code adapted from the book Killer Game Programming in Java.
  */
 public class AttractionServer {
 

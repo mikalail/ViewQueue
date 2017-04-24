@@ -1,4 +1,4 @@
-//package viewqueue;
+package viewqueue;
 
 import java.util.ArrayList;
 
@@ -73,13 +73,8 @@ public class AttractionManager {
 
        String waitlist = "";
 
-     //   for(Attraction x : r){
-   //        waitlist += x.getName() + ":" + x.getWaitTime() + ":";
-          // }
         for(Attraction at : list){
 
-          //  int read = at.getSensorData() + 50; // simulates the sensor changing by adding 50 ppl.
-            //at.sensorUpdate(read); // updates the sensordata (and wait time) for the current attraction
             waitlist += at.toString();  // concatenates the current attraction into the waitlist string.
             at.updateWait();
         }

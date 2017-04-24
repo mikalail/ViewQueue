@@ -1,4 +1,4 @@
-//package viewqueue;
+package viewqueue;
 //I commented out the package cause I was all the java files in my ubuntu machine. "javac *.java" to compile all and 
 //"java Main" to run the server works
 
@@ -15,7 +15,7 @@ public class Attraction  implements Serializable{
     /**
      * Builds a new Attraction
      * @param name The name of this attraction
-     * @param rate the rate (in people/min) that the Attraction
+     * @param wait an estimated initial wait time (integer minutes)
      */
     public Attraction(String name, int wait) {
         this.name = name;
