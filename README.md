@@ -1,2 +1,4 @@
 # ViewQueue-v1
-an android app that lets you know wait times in a park with rides.
+a Java implementation of amusement park attractions with waiting time simulation, and a simple server.  
+
+Designed to pair with a companion Android app.
