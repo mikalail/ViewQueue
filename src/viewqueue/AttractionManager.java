@@ -11,24 +11,12 @@ public class AttractionManager {
     
     /**
      * Constructs a new AttractionManager
+     * @param rides arrayList of Attraction objects
      */
-    public AttractionManager() {
+    public AttractionManager(ArrayList<Attraction> rides) {
 
-        this.list = new ArrayList<>();
-        Attraction att1 = new Attraction("Apocalypse", 4);
-        Attraction att2 = new Attraction("Batwing", 6);
-        Attraction att3 = new Attraction("Dare Devil", 9);
-        Attraction att4 = new Attraction("Mind Eraser", 7);
-        Attraction att5 = new Attraction("Superman", 3);
-        Attraction att6 = new Attraction("Live Music", 2);
-        Attraction att7 = new Attraction("Theater", 3);
-        list.add(att1);
-        list.add(att2);
-        list.add(att3);
-        list.add(att4);
-        list.add(att5);
-        list.add(att6);
-        list.add(att7);
+        this.list = rides;
+
     }
 
     /**
