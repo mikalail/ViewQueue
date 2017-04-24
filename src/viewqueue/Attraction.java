@@ -31,7 +31,11 @@ public class Attraction  implements Serializable{
 
     private int getWaitTime(){
         return wait;
-    } 
+    }
+
+    /**
+     * updates the Wait time with a random number generator (to simulate sensors changing)
+     */
 
     public void updateWait( ){
        int temp = rand(0, 10);
@@ -43,7 +47,7 @@ public class Attraction  implements Serializable{
 
     /**
      * The string representation of Attraction, containing only the 'name' and 'wait' fields
-     * @return a string containing the name and wait time.
+     * @return a string containing the name and wait time with : as field separators.
      */
     public String toString(){
 
