@@ -1,6 +1,4 @@
 package viewqueue;
-//I commented out the package cause I was all the java files in my ubuntu machine. "javac *.java" to compile all and 
-//"java Main" to run the server works
 
 import java.io.Serializable;
 import java.util.Random;
@@ -36,7 +34,6 @@ public class Attraction  implements Serializable{
     /**
      * updates the Wait time with a random number generator (to simulate sensors changing)
      */
-
     public void updateWait( ){
        int temp = rand(0, 10);
        int result = temp - 5;
