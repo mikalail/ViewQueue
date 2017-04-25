@@ -30,29 +30,6 @@ public class AttractionManager {
 
     }
 
-    /**
-     * removes Attraction object from list - if present
-     * @param a - an Attraction object
-     * @return a boolean result based on success(true) or failure(false)
-     */
-    public boolean rem(Attraction a){
-
-        return list.remove(a);
-
-   }
-
-    /**
-     *displays a simple list of Attractions (name only)
-     *
-     */
-    public void display(){
-
-       for(Attraction at : list){
-
-           System.out.println(at.getName());
-
-       }
-   }
 
     /**
      * displays each Attraction in list with Name + wait time only.
