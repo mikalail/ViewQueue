@@ -62,7 +62,7 @@ public class Attraction  implements Serializable{
      * The wait time of this Attraction
      * @return the wait time (in minutes)
      */
-    public double getWait() {
+    public int getWait() {
         return wait;
     }
 }
