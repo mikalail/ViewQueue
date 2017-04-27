@@ -71,7 +71,7 @@ public class AttractionServer {
 
             while (true) {
 
-                System.out.println("Waiting for a client . . . .");
+                System.out.println("Waiting for a client . . . .Press Ctrl-C to exit server.");
                 clientSock = serverSock.accept();
                 System.out.println("Client connection from " + clientSock.getInetAddress().getHostAddress());
                 in = new BufferedReader(new InputStreamReader(clientSock.getInputStream()));
